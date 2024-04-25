@@ -16,6 +16,16 @@
             padding: 10px;
             text-align: center;
             color: white;
+            position: relative;
+        }
+
+        .ar-button {
+            background-color: #ff5733; /* Different color for AR button */
+            color: white;
+        }
+
+        .ar-button:hover {
+            background-color: #e04926; /* Hover color for AR button */
         }
 
         .section {
@@ -131,8 +141,11 @@
 
         <label for="productImage">Product Image:</label>
         <input type="file" id="productImage" name="productImage" required>
-
-        <button type="button" onclick="postProduct()">Post Product</button>
+        
+        <div>
+            <button type="button" onclick="postProduct()">Post Product</button>
+            <button type="button" class="ar-button" onclick="launchAR()">Add Augmented Reality</button>
+        </div>
     </form>
 </div>
 
@@ -170,23 +183,24 @@
     function postProduct() {
         const postProductForm = document.getElementById('postProductForm');
 
-        // Logic to post product information to a server or local storage
         console.log("Product posted");
 
         alert("Product successfully posted!");
     }
 
     function browseProducts() {
-        // Logic to fetch and display existing products
         console.log("Browsing products");
     }
 
     function viewMyProducts() {
-        // Logic to fetch and display user's own products with sale status
         console.log("Viewing my products");
     }
+    function launchAR() {
+        console.log("Launching Augmented Reality view");
+        
+        alert("AR view launched!");
+    }
 
-    // Initial functions to display products and user dashboard when the page loads
     browseProducts();
     viewMyProducts();
 </script>

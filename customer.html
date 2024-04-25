@@ -16,6 +16,18 @@
             padding: 10px;
             text-align: center;
             color: white;
+            position: relative; 
+        }
+    
+        .about-button {
+            position: absolute; 
+            top: 10px; 
+            right: 10px; 
+            background-color: orange;
+            color: rgb(251, 249, 246); 
+            text-decoration: none; 
+            padding: 5px 10px; 
+            border-radius: 5px; 
         }
 
         nav {
@@ -108,6 +120,28 @@
             text-align: center;
             color: #333;
         }
+        .ar-button {
+            background-color: #ff5733; /* Different color for AR button */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .cart-button:hover {
+            background-color: #45A049;
+        }
+
+        .ar-button:hover {
+            background-color: #e04926;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px; 
+            align-items: center; 
+        }
     </style>
     <title>Shopping Home Page</title>
 </head>
@@ -115,6 +149,8 @@
 
 <header>
     <h1>My Shopping Home</h1>
+    <a href="about.html" class="about-button">About Us?</a>
+
 </header>
 
     <nav>
@@ -133,7 +169,10 @@
             <div class="product-title">Dish Washer</div>
             <div class="product-price">Rs 1000</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-            <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+            <div class="product-actions">
+                <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+                <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+            </div>
         </div>
 
         <div class="product-card">
@@ -141,7 +180,9 @@
             <div class="product-title">Dish Washer</div>
             <div class="product-price">Rs 1200</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-            <button onclick="addToCart('Product 2', 1200)">Add to Cart</button>
+            <div class="product-actions">
+                <button onclick="addToCart('Product 2', 1200)">Add to Cart</button>
+            </div>
         </div>
 
         <div class="product-card">
@@ -149,7 +190,10 @@
             <div class="product-title">Single cot</div>
             <div class="product-price">Rs 3500</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-            <button onclick="addToCart('Product 3', 3500)">Add to Cart</button>
+            <div class="product-actions">
+                <button onclick="addToCart('Product 3', 3500)">Add to Cart</button>
+                <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+            </div>
         </div>
 
         <div class="product-card">
@@ -157,7 +201,9 @@
             <div class="product-title">Bangles</div>
             <div class="product-price">Rs 150</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-            <button onclick="addToCart('Product 4', 150)">Add to Cart</button>
+            <div class="product-actions">
+                <button onclick="addToCart('Product 4', 150)">Add to Cart</button>
+            </div>
         </div>
     </div>
 
@@ -184,7 +230,10 @@
             <div class="product-title">Bird House</div>
             <div class="product-price">Rs 750</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-            <button onclick="addToCart('Product 7', 750)">Add to Cart</button>
+            <div class="product-actions">
+                <button onclick="addToCart('Product 7', 750)">Add to Cart</button>
+                <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+            </div>
         </div>
 
         <div class="product-card">
@@ -192,7 +241,10 @@
             <div class="product-title">Bed Spread</div>
             <div class="product-price">Rs 250</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-            <button onclick="addToCart('Product 8', 250)">Add to Cart</button>
+            <div class="product-actions">
+                <button onclick="addToCart('Product 8', 250)">Add to Cart</button>
+                <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+            </div>
         </div>
     </div>
 
@@ -210,7 +262,10 @@
             <div class="product-title">Pillow</div>
             <div class="product-price">Rs 250</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-            <button onclick="addToCart('Product 10', 250)">Add to Cart</button>
+            <div class="product-actions">
+                <button onclick="addToCart('Product 10', 250)">Add to Cart</button>
+                <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+            </div>
         </div>
 
         <div class="product-card">
@@ -242,7 +297,10 @@
             <div class="product-title">Handmade Door</div>
             <div class="product-price">Rs 650</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-            <button onclick="addToCart('Product 14', 650)">Add to Cart</button>
+            <div class="product-actions">
+                <button onclick="addToCart('Product 14', 650)">Add to Cart</button>\
+                <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+            </div>
         </div>
 
         <div class="product-card">
@@ -265,7 +323,10 @@
         <div class="product-title">Dish Washer</div>
         <div class="product-price">Rs 1000</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-        <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+        <div class="product-actions">
+            <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+            <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+        </div>
     </div>
 
     <div class="product-card">
@@ -281,7 +342,10 @@
         <div class="product-title">Single cot</div>
         <div class="product-price">Rs 3500</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-        <button onclick="addToCart('Product 3', 3500)">Add to Cart</button>
+        <div class="product-actions">
+            <button onclick="addToCart('Product 3', 3500)">Add to Cart</button>
+            <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+        </div>
     </div>
 
     <div class="product-card">
@@ -343,6 +407,10 @@
         }
         function openCustomization(){
             window.location.href='customizations options.html';
+        }
+        function viewAugmentedReality() {
+            console.log("Launching Augmented Reality for this product");
+            alert("AR view launched!");
         }
         
     </script>
