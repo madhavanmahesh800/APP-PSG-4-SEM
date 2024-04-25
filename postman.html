@@ -16,6 +16,22 @@
             padding: 10px;
             text-align: center;
             color: white;
+            position: relative;
+        }
+
+        .ar-button {
+            position: absolute; /* Positioning in the header */
+            top: 10px;
+            right: 20px; /* Top right corner */
+            background-color: #ff5733;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .ar-button:hover {
+            background-color: #e04926; /* Hover color */
         }
 
         .section {
@@ -115,6 +131,7 @@
 
 <header>
     <h1>Products Marketplace</h1>
+    <div class="ar-button" onclick="launchAR()">Augmented Reality</div>
 </header>
 
 <div class="section">
@@ -184,6 +201,12 @@
     function viewMyProducts() {
         // Logic to fetch and display user's own products with sale status
         console.log("Viewing my products");
+    }
+    function launchAR() {
+        // Logic to launch AR functionality
+        console.log("Launching Augmented Reality view");
+        
+        alert("AR view launched!");
     }
 
     // Initial functions to display products and user dashboard when the page loads

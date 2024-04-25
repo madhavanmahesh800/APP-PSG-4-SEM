@@ -16,6 +16,18 @@
             padding: 10px;
             text-align: center;
             color: white;
+            position: relative; /* Required for absolute positioning */
+        }
+    
+        .about-button {
+            position: absolute; /* Places the button absolutely within the header */
+            top: 10px; /* Adjust as needed */
+            right: 10px; /* Adjusts the button to be in the top-right corner */
+            background-color: orange; /* No background color as requested */
+            color: rgb(251, 249, 246); /* Text color to match the header */
+            text-decoration: none; /* Optional: removes underline */
+            padding: 5px 10px; /* Padding for better appearance */
+            border-radius: 5px; /* Adds border radius */
         }
 
         nav {
@@ -115,6 +127,8 @@
 
 <header>
     <h1>My Shopping Home</h1>
+    <a href="about.html" class="about-button">About Us?</a>
+
 </header>
 
     <nav>
