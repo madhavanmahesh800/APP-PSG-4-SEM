@@ -17,7 +17,23 @@
             text-align: center;
             color: white;
         }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
+        nav a:hover {
+            background-color: #555;
+        }
         .product-container {
             display: flex;
             flex-wrap: wrap;
@@ -64,6 +80,45 @@
         button:hover {
             background-color: #45a049;
         }
+        h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+            color: #333;
+        }
+        .ar-button {
+            background-color: #ff5733; /* Different color for AR button */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .cart-button:hover {
+            background-color: #45A049;
+        }
+
+        .ar-button:hover {
+            background-color: #e04926;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px; 
+            align-items: center; 
+        }
+        .home-return {
+            position: absolute; 
+            top: 10px; 
+            right: 10px; 
+            background-color: orange;
+            color: rgb(251, 249, 246); 
+            text-decoration: none; 
+            padding: 5px 10px; 
+            border-radius: 5px; 
+        }
     </style>
     <title>Shopping Home Page</title>
 </head>
@@ -71,10 +126,15 @@
 
 <header>
     <h1>My Shopping Home</h1>
+    <a href="customer.html" class="home-return"><-Back To Home</a>
 </header>
-
+<nav>
+    <a href="my purchase.html">My Purchase</a>
+    <a href="Search.Html">Search</a>
+    <a href="my account.html">My Account</a> 
+</nav>
+<h3> Here's The Latest Models You Need</h3>
 <div class="product-container">
-    <!-- Product cards here -->
 
     <div class="product-card">
         <img class="product-image" src="C:\Users\Madhavan\Downloads\product1.jpeg" alt="Dish Washer">
@@ -85,15 +145,18 @@
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\nike impact 4 basketball shoes.jpg" alt="impact-4-basketball-shoes">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\nike impact 4 basketball shoes.jpg" alt="impact-4-basketball-shoes">
         <div class="product-title">nike impact 4 basketball shoes</div>
         <div class="product-price">Rs 3600</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-        <button onclick="addToCart('Nike Impact 4 Basketball Shoes', 3600)">Add to Cart</button>
+        <div class="product-actions">
+            <button onclick="addToCart('Nike Impact 4 Basketball Shoes', 3600)">Add to Cart</button>
+            <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+        </div>
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="" alt="Skullcandy Hesh 2 Bluetooth Wireless Over Ear Headphones with Mic (Gunmetal Black)">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Skullcandy Hesh 2 Bluetooth Wireless Over Ear Headphones with Mic (Gunmetal Black).jpg" alt="Skullcandy Hesh 2 Bluetooth Wireless Over Ear Headphones with Mic (Gunmetal Black)">
         <div class="product-title">Skullcandy Hesh 2 Bluetooth Wireless Over Ear Headphones with Mic (Gunmetal Black)</div>
         <div class="product-price">Rs 7000</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -101,7 +164,7 @@
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\vivio x90 5g(12+256).jpg" alt="vivio x90 5g(12+256)">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\vivio x90 5g(12+256).jpg" alt="vivio x90 5g(12+256)">
         <div class="product-title">vivio x90 5g(12+256)</div>
         <div class="product-price">Rs 22600</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -109,55 +172,77 @@
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\3 Seater Chesterfield Couch Furniture.jpg" alt="3 Seater Chesterfield Couch Furniture">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\3 Seater Chesterfield Couch Furniture.jpg" alt="3 Seater Chesterfield Couch Furniture">
         <div class="product-title">3 Seater Chesterfield Couch Furniture</div>
         <div class="product-price">Rs 25999</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-        <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+        <div class="product-actions">
+            <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+            <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+        </div>
     </div>
-
+</div>
+<h3>Buy Some Of These And Win Prizes</h3>
+<div class="product-container">
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Wakefit Height Adjustable Hollow Fibre Sleeping Pillow with Zip.jpg" alt="Wakefit Height Adjustable Hollow Fibre Sleeping Pillow with Zip ">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Wakefit Height Adjustable Hollow Fibre Sleeping Pillow with Zip.jpg" alt="Wakefit Height Adjustable Hollow Fibre Sleeping Pillow with Zip ">
         <div class="product-title">Wakefit Height Adjustable Hollow Fibre Sleeping Pillow with Zip</div>
         <div class="product-price">Rs 699</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-        <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+        <div class="product-actions">
+            <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+            <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+        </div>
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Unishore Gym Dumbbell Set (5KG X 2PCS) PVC Dumbell Pair for Home Gym Fixed Weight Dumbbell.webp" alt="Unishore Gym Dumbbell Set (5KG X 2PCS) PVC Dumbell Pair for Home Gym Fixed Weight Dumbbell  ">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Unishore Gym Dumbbell Set (5KG X 2PCS) PVC Dumbell Pair for Home Gym Fixed Weight Dumbbell.webp" alt="Unishore Gym Dumbbell Set (5KG X 2PCS) PVC Dumbell Pair for Home Gym Fixed Weight Dumbbell  ">
         <div class="product-title">Unishore Gym Dumbbell Set (5KG X 2PCS) PVC Dumbell Pair for Home Gym Fixed Weight Dumbbell </div>
         <div class="product-price">Rs 334</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-        <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+        <div class="product-actions">
+            <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+            <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+        </div>
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\White Nivia Trainer Football Size 4.png" alt="White Nivia Trainer Football Size 4 ">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\White Nivia Trainer Football Size 4.png" alt="White Nivia Trainer Football Size 4 ">
         <div class="product-title">White Nivia Trainer Football Size 4 </div>
         <div class="product-price">Rs 199</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-        <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+        <div class="product-actions">
+            <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+            <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+        </div>
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Boldfit Compact Gym Shaker Bottle 500 Ml.webp" alt="Boldfit Compact Gym Shaker Bottle 500 Ml ">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Boldfit Compact Gym Shaker Bottle 500 Ml.webp" alt="Boldfit Compact Gym Shaker Bottle 500 Ml ">
         <div class="product-title">Boldfit Compact Gym Shaker Bottle 500 Ml </div>
         <div class="product-price">Rs 199</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-        <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+        <div class="product-actions">
+            <button onclick="addToCart('Product 1', 1000)">Add to Cart</button>
+            <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+        </div>
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Nike Air Zoom Pegasus 38 Running Shoes.jpg" alt="Nike Air Zoom Pegasus 38 Running Shoes">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Nike Air Zoom Pegasus 38 Running Shoes.jpg" alt="Nike Air Zoom Pegasus 38 Running Shoes">
         <div class="product-title">Nike Air Zoom Pegasus 38 Running Shoes</div>
         <div class="product-price">Rs 1500</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-        <button onclick="addToCart('Nike Air Zoom Pegasus 38 Running Shoes', 2500)">Add to Cart</button>
+        <div class="product-actions">
+            <button onclick="addToCart('Nike Air Zoom Pegasus 38 Running Shoes', 2500)">Add to Cart</button>
+            <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+        </div>
     </div>
-
+</div>
+<h3>Don't Skip It</h3>
+<div class="product-container">
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Apple AirPods Pro.jpg" alt="Apple AirPods Pro">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Apple AirPods Pro.jpg" alt="Apple AirPods Pro">
         <div class="product-title">Apple AirPods Pro</div>
         <div class="product-price">Rs 15000</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -165,7 +250,7 @@
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Sony WH-1000XM4 Wireless Noise-Cancelling Headphones.jpg" alt="Sony WH-1000XM4 Wireless Noise-Cancelling Headphones">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Sony WH-1000XM4 Wireless Noise-Cancelling Headphones.jpg" alt="Sony WH-1000XM4 Wireless Noise-Cancelling Headphones">
         <div class="product-title">Sony WH-1000XM4 Wireless Noise-Cancelling Headphones</div>
         <div class="product-price">Rs 23999</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -173,7 +258,7 @@
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Samsung Galaxy S21 Ultra 5G.jpg" alt="Samsung Galaxy S21 Ultra 5G">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Samsung Galaxy S21 Ultra 5G.jpg" alt="Samsung Galaxy S21 Ultra 5G">
         <div class="product-title">Samsung Galaxy S21 Ultra 5G</div>
         <div class="product-price">Rs 119999</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -181,7 +266,7 @@
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Apple iPhone 13 Pro Max.jpg" alt="Apple iPhone 13 Pro Max">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Apple iPhone 13 Pro Max.jpg" alt="Apple iPhone 13 Pro Max">
         <div class="product-title">Apple iPhone 13 Pro Max</div>
         <div class="product-price">Rs 129999</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -189,15 +274,17 @@
     </div>
 
     <div class="product-card">
-        <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Sony PlayStation 5 Console.jpg" alt="Sony PlayStation 5 Console">
+        <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Sony PlayStation 5 Console.jpg" alt="Sony PlayStation 5 Console">
         <div class="product-title">Sony PlayStation 5 Console</div>
         <div class="product-price">Rs 49999</div>
         <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
         <button onclick="addToCart('Sony PlayStation 5 Console', 49999)">Add to Cart</button>
     </div>
-        <!-- Product 1: Sony WH-1000XM4 Wireless Noise-Cancelling Headphones -->
+</div>
+<h3>Go On And Deal With These Latest Models</h3>
+<div class="product-container">
         <div class="product-card">
-            <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Sony WH-1000XM4 Wireless Noise-Cancelling Headphones.jpg" alt="Sony WH-1000XM4 Wireless Noise-Cancelling Headphones">
+            <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Sony WH-1000XM4 Wireless Noise-Cancelling Headphones.jpg" alt="Sony WH-1000XM4 Wireless Noise-Cancelling Headphones">
             <div class="product-title">Sony WH-1000XM4 Wireless Noise-Cancelling Headphones</div>
             <div class="product-price">RS 349.99</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -206,7 +293,7 @@
         
         <!-- Product 2: Samsung Galaxy Watch 4 -->
         <div class="product-card">
-            <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Samsung Galaxy Watch 4.jpg" alt="Samsung Galaxy Watch 4">
+            <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Samsung Galaxy Watch 4.jpg" alt="Samsung Galaxy Watch 4">
             <div class="product-title">Samsung Galaxy Watch 4</div>
             <div class="product-price">RS 279.99</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -215,7 +302,7 @@
         
         <!-- Product 3: Apple iPad Air (2020) -->
         <div class="product-card">
-            <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Apple MacBook Pro (16-inch, M1 Pro).jpg" alt="Apple iPad Air (2020)">
+            <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Apple MacBook Pro (16-inch, M1 Pro).jpg" alt="Apple iPad Air (2020)">
             <div class="product-title">Apple iPad Air (2020)</div>
             <div class="product-price">RS 15999.00</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -223,7 +310,7 @@
         </div>
           <!-- Product 2: Apple MacBook Pro (16-inch, M1 Pro) -->
           <div class="product-card">
-            <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Apple MacBook Pro (16-inch, M1 Pro).jpg" alt="Apple MacBook Pro (16-inch, M1 Pro)">
+            <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Apple MacBook Pro (16-inch, M1 Pro).jpg" alt="Apple MacBook Pro (16-inch, M1 Pro)">
             <div class="product-title">Apple MacBook Pro (16-inch, M1 Pro)</div>
             <div class="product-price">RS 22499.00</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -232,33 +319,40 @@
         
         <!-- Product 3: Samsung Galaxy S22 Ultra 5G -->
         <div class="product-card">
-            <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Samsung Galaxy S22 Ultra 5G.jpg" alt="Samsung Galaxy S22 Ultra 5G">
+            <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Samsung Galaxy S22 Ultra 5G.jpg" alt="Samsung Galaxy S22 Ultra 5G">
             <div class="product-title">Samsung Galaxy S22 Ultra 5G</div>
             <div class="product-price">RS 41199.99</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
             <button onclick="addToCart('Samsung Galaxy S22 Ultra 5G', 1199.99)">Add to Cart</button>
         </div>
-        
-        <!-- Product 4: Nikon Z9 Mirrorless Camera -->
+</div>
+<h3>Buy It, Use It, Enjoy</h3>
+<div class="product-container">
         <div class="product-card">
-            <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Nikon Z9 Mirrorless Camera.jpg" alt="Nikon Z9 Mirrorless Camera">
+            <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Nikon Z9 Mirrorless Camera.jpg" alt="Nikon Z9 Mirrorless Camera">
             <div class="product-title">Nikon Z9 Mirrorless Camera</div>
             <div class="product-price">RS 55499.95</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-            <button onclick="addToCart('Nikon Z9 Mirrorless Camera', 5499.95)">Add to Cart</button>
+            <div class="product-actions">
+                <button onclick="addToCart('Nikon Z9 Mirrorless Camera', 5499.95)">Add to Cart</button>
+                <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+            </div>
         </div>
         
         <!-- Product 5: Dyson V11 Torque Drive Cordless Vacuum Cleaner -->
         <div class="product-card">
-            <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Dyson V11 Torque Drive Cordless Vacuum Cleaner.jpg" alt="Dyson V11 Torque Drive Cordless Vacuum Cleaner">
+            <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Dyson V11 Torque Drive Cordless Vacuum Cleaner.jpg" alt="Dyson V11 Torque Drive Cordless Vacuum Cleaner">
             <div class="product-title">Dyson V11 Torque Drive Cordless Vacuum Cleaner</div>
             <div class="product-price">RS 2699.99</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-            <button onclick="addToCart('Dyson V11 Torque Drive Cordless Vacuum Cleaner', 699.99)">Add to Cart</button>
+            <div class="product-actions">
+                <button onclick="addToCart('Dyson V11 Torque Drive Cordless Vacuum Cleaner', 699.99)">Add to Cart</button>
+                <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+            </div>
         </div>
 
         <div class="product-card">
-            <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Google Pixel 6.jpg" alt="Google Pixel 6">
+            <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Google Pixel 6.jpg" alt="Google Pixel 6">
             <div class="product-title">Google Pixel 6</div>
             <div class="product-price">RS 33699.00</div>
             <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -266,7 +360,7 @@
         </div>
             <!-- Product 1: iPhone 13 Pro -->
             <div class="product-card">
-                <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Apple iPhone 13 Pro Max.jpg" alt="iPhone 13 Pro">
+                <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\iPhone 13 Pro.jpg" alt="iPhone 13 Pro">
                 <div class="product-title">iPhone 13 Pro</div>
                 <div class="product-price">RS 111999.00</div>
                 <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -275,16 +369,20 @@
             
             <!-- Product 2: Samsung QLED 4K Smart TV -->
             <div class="product-card">
-                <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Samsung QLED 4K Smart TV.jpg" alt="Samsung QLED 4K Smart TV">
+                <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Samsung QLED 4K Smart TV.jpg" alt="Samsung QLED 4K Smart TV">
                 <div class="product-title">Samsung QLED 4K Smart TV</div>
                 <div class="product-price">RS 121499.99</div>
                 <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
-                <button onclick="addToCart('Samsung QLED 4K Smart TV', 1499.99)">Add to Cart</button>
+                <div class="product-container">
+                    <button onclick="addToCart('Samsung QLED 4K Smart TV', 1499.99)">Add to Cart</button>
+                    <button class="ar-button" type="button" onclick="viewAugmentedReality()">View Augmented Reality</button>
+                </div>
             </div>
-            
-            <!-- Product 3: Canon EOS R5 Mirrorless Camera -->
+</div>
+<h3>Come On Man, You Can Do It!</h3>
+<div class="product-container">
             <div class="product-card">
-                <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Canon EOS R5 Mirrorless Camera.jpg" alt="Canon EOS R5 Mirrorless Camera">
+                <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Canon EOS R5 Mirrorless Camera.jpg" alt="Canon EOS R5 Mirrorless Camera">
                 <div class="product-title">Canon EOS R5 Mirrorless Camera</div>
                 <div class="product-price">RS 73899.00</div>
                 <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -293,7 +391,7 @@
             
             <!-- Product 4: Apple Watch Series 7 -->
             <div class="product-card">
-                <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Apple Watch Series 7.jpg" alt="Apple Watch Series 7">
+                <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Apple Watch Series 7.jpg" alt="Apple Watch Series 7">
                 <div class="product-title">Apple Watch Series 7</div>
                 <div class="product-price">RS 10399.00</div>
                 <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
@@ -302,7 +400,7 @@
             
             <!-- Product 5: Sony A7 III Mirrorless Camera -->
             <div class="product-card">
-                <img class="product-image" src="C:\Users\CC\Desktop\APP-PSG-4-SEM\branded items\Sony A7 III Mirrorless Camera.jpg" alt="Sony A7 III Mirrorless Camera">
+                <img class="product-image" src="C:\Users\Madhavan\OneDrive\Desktop\APP\branded items\Sony A7 III Mirrorless Camera.jpg" alt="Sony A7 III Mirrorless Camera">
                 <div class="product-title">Sony A7 III Mirrorless Camera</div>
                 <div class="product-price">RS 111798.00</div>
                 <div class="product-review"><button onclick="redirectToReview()">Review</button></div>
