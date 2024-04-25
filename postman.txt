@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        header {
+            background-color: orange;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .section {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45A049;
+        }
+
+        .product-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: white;
+        }
+
+        .product-item-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .product-item-price {
+            color: green;
+            font-weight: bold;
+        }
+
+        .product-item-description {
+            margin-top: 10px;
+        }
+
+        .status {
+            text-align: right;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+    <title>Handmade Products Marketplace</title>
+</head>
+<body>
+
+<header>
+    <h1>Handmade Products Marketplace</h1>
+</header>
+
+<div class="section">
+    <h2>Post Your Product</h2>
+    <form id="postProductForm">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required>
+
+        <label for="productDescription">Description:</label>
+        <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+
+        <label for="productPrice">Price (Rs):</label>
+        <input type="number" id="productPrice" name="productPrice" required>
+
+        <label for="productImage">Product Image:</label>
+        <input type="file" id="productImage" name="productImage" required>
+
+        <button type="button" onclick="postProduct()">Post Product</button>
+    </form>
+</div>
+
+<div class="section" id="productList">
+    <h2>Browse Products</h2>
+    <!-- Products will be listed here -->
+</div>
+
+<div class="section" id="userProductList">
+    <h2>My Products</h2>
+    <div class="product-item">
+        <img src="C:\Users\Madhavan\Downloads\product4.jpeg" alt="Handmade Bangles" class="product-image">
+        <div class="product-item-title">Handmade Bangles</div>
+        <div class="product-item-price">Rs 500</div>
+        <div class="product-item-description">A beautifully crafted wooden bowl made from reclaimed wood.</div>
+        <div class="status">Status: Unsold</div>
+    </div>
+
+    <div class="product-item">
+        <img src="C:\Users\Madhavan\Downloads\product6.jpeg" alt="Home-made Umbrella" class="product-image">
+        <div class="product-item-title">Home-made Umbrella</div>
+        <div class="product-item-price">Rs 300</div>
+        <div class="product-item-description">A warm and soft scarf, hand-knitted with high-quality wool.</div>
+        <div class="status">Status: Sold</div>
+    </div>
+</div>
+
+
+<script>
+    function postProduct() {
+        const postProductForm = document.getElementById('postProductForm');
+
+        // Logic to post product information to a server or local storage
+        console.log("Product posted");
+
+        alert("Product successfully posted!");
+    }
+
+    function browseProducts() {
+        // Logic to fetch and display existing products
+        console.log("Browsing products");
+    }
+
+    function viewMyProducts() {
+        // Logic to fetch and display user's own products with sale status
+        console.log("Viewing my products");
+    }
+
+    // Initial functions to display products and user dashboard when the page loads
+    browseProducts();
+    viewMyProducts();
+</script>
+
+</body>
+</html>
